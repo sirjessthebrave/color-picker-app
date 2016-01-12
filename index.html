@@ -7,6 +7,10 @@
 
     <link rel="stylesheet" type="text/css" href="http://labs.abeautifulsite.net/jquery-minicolors/jquery.minicolors.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
     
     <script type="text/javascript" src="https://code.angularjs.org/1.4.0-rc.2/angular.min.js"></script>
 
@@ -19,27 +23,70 @@
     <div class="intro-text">
         <h1>Angular Color Picker Style Tile</h1>
         <p>Use the Color Picker to choose your HTML element colors.  The first element is directly bound with Angular, while the second element pulls colors from a created style tag including all user chosen styles.  Use this to give your users control over their sites style tiles!</p></div>
-  <div class="color-picker-wrapper" ng-controller="ColorController">
+    <div ng-controller="ColorController">
 
   <style type="text/css" data-ng-model="siteStyles">{{ siteStyles }}</style>
       
-      <div class="form-group">
-        <h1 ng-style="{color: h1Color}">This is an H1</h1>
-        <input ng-model="h1Color" type="text" id="h1" class="demo" value="#db913d">
-        <h1>Test for head styles</h1>
-    </div>
+      <div  class="color-picker-wrapper">
 
-    <div class="form-group">
-        <h2 ng-style="{color: h2Color}">This is an H2</h2>
-        <input ng-model="h2Color" type="text" id="h2" class="demo" value="#db913d">
-        <h2>Test for head styles</h2>
-    </div>  
+        <span>Designers: make sure to dictate which elements get which fonts</span><br>
+        <label>Primary Font</label>
+        <select ng-model="h1Font" name="h1" id="h1" class="style-choice">
+        <option value="'Oswald', sans-serif">Oswald</option>
+        <option value="'Lato', sans-serif">Lato</option>
+        <option value="'Roboto', sans-serif">Roboto</option>
+        </select>
 
-    <div class="form-group">
-        <h3 ng-style="{color: h3Color}">This is an H3</h3>
-        <input ng-model="h3Color" type="text" id="h3" class="demo" value="#db913d">
-        <h3>Test for head styles</h3>
-    </div>       
+        <label>Secondary Font</label>
+        <select ng-model="h2Font" name="h2" id="h2" class="style-choice">
+        <option value="'Oswald', sans-serif">Oswald</option>
+        <option value="'Lato', sans-serif">Lato</option>
+        <option value="'Roboto', sans-serif">Roboto</option>
+        </select>        
+
+        <h1 ng-style="{color: h1Color; font-family: h1Font}">Primary Header</h1>
+        <input ng-model="h1Color" type="text" id="h1" class="demo color-choice">
+
+        <h2 ng-style="{color: h2Color}">Secondary Header</h2>
+        <input ng-model="h2Color" type="text" id="h2" class="color-choice demo">
+
+        <h3 ng-style="{color: h3Color}">Tertiary Header</h3>
+        <input ng-model="h3Color" type="text" id="h3" class="color-choice demo">
+
+        <h4 ng-style="{color: h4Color}">Tertiary Header</h3>
+        <input ng-model="h4Color" type="text" id="h4" class="color-choice demo">
+
+        <h5 ng-style="{color: h5Color}">Tertiary Header</h3>
+        <input ng-model="h5Color" type="text" id="h5" class="color-choice demo">
+
+        <p ng-style="{color: pColor}">Paragraph</p>
+        <input ng-model="pColor" type="text" id="p" class="color-choice demo">
+
+        <a ng-style="{color: aColor}">Link</a>
+        <input ng-model="haColor" type="text" id="ha" class="color-choice demo">
+
+        <ul ng-style="{color: ulColor}">
+            <li>List item</li>
+            <li>List Item</li>
+        </ul>
+        <input ng-model="ulColor" type="text" id="ul" class="style-choice demo">
+    </div>    
+
+    <div class="html-example">
+        <h1>Welcome to your site style tile!</h1>
+        <h2>It's where you pick your styles!!</h2>
+        <h3>Choose your styles to the left</h3>
+        <h4>and see them reflected here!</h4>
+        <h5>Who even uses an h5!?</h5>
+        <p>This example shows you what your selections will look like throughout your site!  Make sure to pay attention to your background and font colors - if you pick a while background and a very light font - your users wont be able to read your site!! <a href="#">Think about different Link States!</a> What are link states? Glad you asked!</p>
+        
+        <p>Link States:</p>
+        <ul>
+            <li>Unvisited</li>
+            <li>Visited</li>
+            <li>Hover</li>
+        </ul>
+    </div>   
       
   </div>
 
