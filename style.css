@@ -1,12 +1,32 @@
+*{
+  box-sizing: border-box;
+}
+
 .hidden-input {
   display: none;
 }
 
 .color-picker-wrapper {
-    width: 80%;
-    margin: 0 auto;
+    width: 50%;
+    float: left;
+    padding-left: 1em;
+    display: inline;
+}
+
+.html-example {
+  width: 50%;
+  display: inline;
+  float: left;
 }
 
 .intro-text {
   margin: 2em;
+}
+
+a {
+  display: block;
+}
+
+input[type="text"] {
+      padding: 1em 2em;
 }
