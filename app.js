@@ -15,22 +15,35 @@ $(document).ready( function() {
  myApp.controller('ColorController' , function($scope) {
   $scope.siteStyles = "";
 
-    $('.color-choice').focusout(function() {
+    $('.set-fonts').click(function(){
+
+      $scope.primaryElements = $(".primary-font-elements").val() || [];
+          console.log( 'elements: ' + $scope.primaryElements)
+        
+      $scope.primaryFont = $(".primary-font").val();
+          console.log('primary: ' + $scope.primaryFont);
+
+      $scope.secondaryFont = $(".secondary-font").val();
+          console.log('secondary: ' + $scope.secondaryFont);
+        $scope.newStyle = "body{font-family: " + $scope.secondaryFont+ "} ";
+        $scope.siteStyles += $scope.newStyle;
+
+        jQuery.each($scope.primaryElements, function(i, val){
+          $scope.newStyle = val + "{font-family: " + $scope.primaryFont + "} ";
+          $scope.siteStyles += $scope.newStyle;
+          console.log($scope.siteStyles);
+      });//end .each
+    });//end click
+
+       $('.color-choice').focusout(function() {
         $scope.color = $(this).val();
         $scope.id = $(this).attr('id');
         $scope.newStyle = $scope.id + "{color: " + $scope.color + "} ";
         $scope.siteStyles += $scope.newStyle;
-     });
-
-    $('select').change(function(){
-        $scope.font = $(this).val();
-        $scope.id = $(this).attr('id');
-        $scope.newStyle = $scope.id + "{font-family: " + $scope.font + "} ";
-        $scope.siteStyles += $scope.newStyle;
-    });
-
+     });//end focusout
+ 
    
-  });
+  });//end color controller
 
 
 })();//start/end
