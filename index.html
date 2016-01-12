@@ -74,6 +74,13 @@
         <a ng-style="{color: aColor}">Link</a>
         <input ng-model="aColor" type="text" id="a" class="color-choice demo">
 
+        <div class="button-wrapper">
+            <a class="button" ng-style="{background-color: buttonColor; color: buttonTextColor}">Button</a>
+            <label>Text Color</label>
+            <input ng-model="buttonTextColor" type="text" id="a.button" class="color-choice demo">
+            <label>Background</label>
+            <input ng-model="buttonColor" type="text" id="button" class="background-color-choice demo">
+        </div>
         <ul ng-style="{color: ulColor}">
             <li>List item</li>
             <li>List Item</li>
@@ -95,6 +102,8 @@
             <li>Visited</li>
             <li>Hover</li>
         </ul>
+
+        <a class="button">Button</a>
     </div>   
       
   </div>
