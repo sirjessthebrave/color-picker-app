@@ -30,3 +30,13 @@ a {
 input[type="text"] {
       padding: 1em 2em;
 }
+
+.button-wrapper {
+margin: 2em 0;
+}
+.button {
+  border: solid 1px #000;
+  text-decoration: none;
+  padding: 1em 2em;
+  display: inline-block;
+}

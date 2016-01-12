@@ -35,10 +35,17 @@ $(document).ready( function() {
       });//end .each
     });//end click
 
-       $('.color-choice').focusout(function() {
+      $('.color-choice').focusout(function() {
         $scope.color = $(this).val();
         $scope.id = $(this).attr('id');
         $scope.newStyle = $scope.id + "{color: " + $scope.color + "} ";
+        $scope.siteStyles += $scope.newStyle;
+     });//end focusout
+
+      $('.background-color-choice').focusout(function() {
+        $scope.color = $(this).val();
+        $scope.id = $(this).attr('id');
+        $scope.newStyle = "." + $scope.id +"{background-color: " + $scope.color + "} ";
         $scope.siteStyles += $scope.newStyle;
      });//end focusout
  
