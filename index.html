@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Color Picker</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://labs.abeautifulsite.net/jquery-minicolors/jquery.minicolors.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://labs.abeautifulsite.net/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script type="text/javascript" src="https://code.angularjs.org/1.4.0-rc.2/angular.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+    
+    
+
+</head>
+<body>
+    <div class="intro-text">
+        <h1>Angular Color Picker Style Tile</h1>
+        <p>Use the Color Picker to choose your HTML element colors.  The first element is directly bound with Angular, while the second element pulls colors from a created style tag including all user chosen styles.  Use this to give your users control over their sites style tiles!</p></div>
+  <div class="color-picker-wrapper" ng-controller="ColorController">
+
+  <style type="text/css" data-ng-model="siteStyles">{{ siteStyles }}</style>
+      
+      <div class="form-group">
+        <h1 ng-style="{color: h1Color}">This is an H1</h1>
+        <input ng-model="h1Color" type="text" id="h1" class="demo" value="#db913d">
+        <h1>Test for head styles</h1>
+    </div>
+
+    <div class="form-group">
+        <h2 ng-style="{color: h2Color}">This is an H2</h2>
+        <input ng-model="h2Color" type="text" id="h2" class="demo" value="#db913d">
+        <h2>Test for head styles</h2>
+    </div>  
+
+    <div class="form-group">
+        <h3 ng-style="{color: h3Color}">This is an H3</h3>
+        <input ng-model="h3Color" type="text" id="h3" class="demo" value="#db913d">
+        <h3>Test for head styles</h3>
+    </div>       
+      
+  </div>
+
+</body>
+</html>

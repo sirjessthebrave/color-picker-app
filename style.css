@@ -1,0 +1,12 @@
+.hidden-input {
+  display: none;
+}
+
+.color-picker-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.intro-text {
+  margin: 2em;
+}
