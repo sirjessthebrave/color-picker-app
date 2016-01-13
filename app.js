@@ -41,20 +41,28 @@ console.log("app!");
 
       //after the user takes focus off the color pickers, create style and add to new style tag
       $('.color-choice').focusout(function() {
-        $scope.color = $(this).val();
-        $scope.id = $(this).attr('id');
-        $scope.newStyle = $scope.id + "{color: " + $scope.color + "} ";
-        $scope.siteStyles += $scope.newStyle;
+        //sett css attribute to whatever you are trying to set
+        $scope.cssAttr = 'color';
+        //call updateStyle function and pass through the attribute ID 
+        //(which html attribute you are targeting), the css attribute (what css you are setting), and the value of the color picker
+        updateStyle($(this).attr('id'), $scope.cssAttr, $(this).val());
       });//end focusout
 
       //after the user takes focus off the background-color pickers, create style and add to new style tag
       $('.background-color-choice').focusout(function() {
-        $scope.color = $(this).val();
-        //the id's are set to be the html element they represent - is there a better way to grab what HTML element associated with the specific picker?
-        $scope.id = $(this).attr('id');
-        $scope.newStyle = "." + $scope.id +"{background-color: " + $scope.color + "} ";
-        $scope.siteStyles += $scope.newStyle;
+        //sett css attribute to whatever you are trying to set
+        $scope.cssAttr = 'background-color';
+        //call updateStyle function and pass through the attribute ID 
+        //(which html attribute you are targeting), the css attribute (what css you are setting), and the value of the color picker
+        updateStyle($(this).attr('id'), $scope.cssAttr, $(this).val());
       });//end focusout
+
+      function updateStyle(selector, attribute, value){
+        //creating the css
+        $scope.newStyle = selector +"{" + attribute + ": " + value + "} ";
+        //update style string to be input in the <style> tag with new values
+        $scope.siteStyles += $scope.newStyle;
+      };//end function updateStyle
  
    
   });//end color controller
