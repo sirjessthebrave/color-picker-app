@@ -1,0 +1,85 @@
+<div  ng-controller="ColorController">
+    <style type="text/css" data-ng-model="siteStyles">{{ siteStyles }}</style>
+      
+      <div  class="color-picker-wrapper">
+			
+        <div>
+            <label>Elements to have Primary Font (all other elements will have secondary font)</label><br>
+            <select multiple  class="primary-font-elements">
+            <option value="h1">H1</option>
+            <option value="h2">H2</option>
+            <option value="h3">H3</option>
+            </select>
+        </div>
+
+        <label>Primary Font</label>
+        <select class="primary-font">
+        <option value="'Oswald', sans-serif">Oswald</option>
+        <option value="'Lato', sans-serif">Lato</option>
+        <option value="'Roboto', sans-serif">Roboto</option>
+        </select>
+
+        <label>Secondary Font</label>
+        <select class="secondary-font">
+        <option value="'Oswald', sans-serif">Oswald</option>
+        <option value="'Lato', sans-serif">Lato</option>
+        <option value="'Roboto', sans-serif">Roboto</option>
+        </select> 
+
+        <button class="set-fonts" ng-click="setFonts()">Set Fonts</button>       
+
+				<form id="color-picker-form">
+					<h1 ng-style="{color: h1Color; font-family: h1Font}">Primary Header</h1>
+					<input ng-model="h1Color" type="text" id="h1" mini-colors test class="color-choice" cssAttr="color">
+
+					<h2 ng-style="{color: h2Color}">Secondary Header</h2>
+					<input ng-model="h2Color" type="text" id="h2" mini-colors cssAttr="color" class="color-choice demo">
+
+					<h3 ng-style="{color: h3Color}">Tertiary Header</h3>
+					<input ng-model="h3Color" type="text" id="h3" mini-colors cssAttr="color" class="color-choice demo">
+
+					<h4 ng-style="{color: h4Color}">Tertiary Header</h3>
+					<input ng-model="h4Color" type="text" id="h4" mini-colors cssAttr="color" class="color-choice demo">
+
+					<h5 ng-style="{color: h5Color}">Tertiary Header</h3>
+					<input ng-model="h5Color" type="text" id="h5" mini-colors cssAttr="color" class="color-choice demo">
+
+					<p ng-style="{color: pColor}">Paragraph</p>
+					<input ng-model="pColor" type="text" id="p" mini-colors cssAttr="color" class="color-choice demo">
+
+					<a ng-style="{color: aColor}">Link</a>
+					<input ng-model="aColor" type="text" id="a" mini-colors cssAttr="color" class="color-choice demo">
+
+					<div class="button-wrapper">
+							<a class="button" ng-style="{background-color: buttonColor; color: buttonTextColor}">Button</a>
+							<label>Text Color</label>
+							<input ng-model="buttonTextColor" type="text" id="a.button" mini-colors cssAttr="color" class="color-choice demo">
+							<label>Background</label>
+							<input ng-model="buttonColor" type="text" id="a.button" mini-colors cssAttr="background-color" class="background-color-choice demo">
+					</div>
+					<ul ng-style="{color: ulColor}">
+							<li>List item</li>
+							<li>List Item</li>
+					</ul>
+					<input ng-model="ulColor" type="text" id="ul" mini-colors cssAttr="color" class="color-choice demo">
+			</div> 
+		</form>
+
+    <div class="html-example">
+        <h1>Welcome to your site style tile!</h1>
+        <h2>It's where you pick your styles!!</h2>
+        <h3>Choose your styles to the left</h3>
+        <h4>and see them reflected here!</h4>
+        <h5>Who even uses an h5!?</h5>
+        <p>This example shows you what your selections will look like throughout your site!  Make sure to pay attention to your background and font colors - if you pick a while background and a very light font - your users wont be able to read your site!! <a href="#">Think about different Link States!</a> What are link states? Glad you asked!</p>
+        
+        <p>Link States:</p>
+        <ul>
+            <li>Unvisited</li>
+            <li>Visited</li>
+            <li>Hover</li>
+        </ul>
+
+        <a class="button">Button</a>
+    </div>   
+</div>
