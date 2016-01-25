@@ -42,22 +42,14 @@ console.log("app!");
 
 
     $('select').change(function(){
-      console.log('change');
-      
       //creates an array of the elements to have the primary font
-      $scope.primaryElements = $(".primary-font-elements").val() || [];
-      //console.log("prim elems: " + $scope.primaryElements);     
+      $scope.primaryElements = $(".primary-font-elements").val() || [];    
       //sets a variable with the primary font
-      $scope.primaryFont = $(".primary-font").val();
-      //console.log('prim font: ' + $scope.primaryFont);    
+      $scope.primaryFont = $(".primary-font").val();   
       //sets a variable with the secondary font
-      $scope.secondaryFont = $(".secondary-font").val();
-     // console.log('second font: '+ $scope.secondaryFont);   
+      $scope.secondaryFont = $(".secondary-font").val();   
       //sets the body font style to the secondary font
       $scope.newFont = "body{font-family: " + $scope.secondaryFont+ "} ";
-      // adds new style to our style variable which is tied to the HTML so automatically updates
-      //$scope.siteStyles += $scope.newStyle;
-      //console.log('first site styles: ' + $scope.siteStyles);
     });//end change
 	 
 	 $('.set-fonts').click($scope.setFonts);
@@ -70,21 +62,19 @@ console.log("app!");
         $scope.newFont = val + "{font-family: " + $scope.primaryFont + "} ";
         //updates the style tag
         $scope.siteFonts += $scope.newFont;
-       // console.log('for each loop styles: ' + $scope.siteStyles);
       });//end .each
-      //console.log('click ' +  $scope.siteStyles);
-    };
+    };//end setFonts function
 
 
       //after the user takes focus off the color pickers, create style and add to new style tag
       $('#color-picker-form :input').blur(function() {
 				$scope.siteStyles = "";
-				
+				//re generates the css tag every time so that when users change, you dont get a huge style tag growing every time the user changes their mind
 				$("#color-picker-form :input").each(function(){
 				 	$scope.values = $(this).val();
 					$scope.selector = $(this).attr('id');
 					$scope.cssAttr = $(this).attr("cssAttr");
-					
+					//check to see if all these valuse are set before generating the css values
 					if($scope.values != false && $scope.cssAttr != false ){
 						//call updateStyle function and pass through the attribute ID 
 						//(which html attribute you are targeting), the css attribute (what css you are setting), and the value of the color picker
