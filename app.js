@@ -67,7 +67,7 @@ console.log("app!");
 
 
       //after the user takes focus off the color pickers, create style and add to new style tag
-      $('#color-picker-form :input').blur(function() {
+      $('#color-picker-form :input').change(function() {
 				$scope.siteStyles = "";
 				//re generates the css tag every time so that when users change, you dont get a huge style tag growing every time the user changes their mind
 				$("#color-picker-form :input").each(function(){
