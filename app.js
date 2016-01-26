@@ -41,7 +41,7 @@ console.log("app!");
   $scope.newStyle =  "";
 
 
-    $('select').change(function(){
+    $('select').on('keyup keypress blur change', function(){
       //creates an array of the elements to have the primary font
       $scope.primaryElements = $(".primary-font-elements").val() || [];    
       //sets a variable with the primary font
